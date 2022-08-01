@@ -3,31 +3,32 @@ import { useState } from "react";
 import { data } from "../Assets/data";
 
 const Counter = () => {
-  const [count, setCount] = useState([0]);
-  let advice = data[count];
-  const increase = () => setCount(advice.id + 1);
-  const decrease = () => setCount(advice.id - 1);
+  const [count, setCount] = useState(0);
+  let consiglio = data[count];
+
   return (
-    <div className={"container"}>
-      <div className={"card-container"}>
-        <div className={"card"}>
-          <h1> CON USESTATE</h1>
-          <h2>{advice.advice}</h2>
-          <p className={"cardtext"}>Post number: #{advice.id}</p>
-        </div>
+    <div className="Counter">
+      <div className={"card"}>
+        <h1>USESTATE COUNTER</h1>
+        <h2 className={"card__text"}>({consiglio.id})</h2>
+        <h3>{consiglio.text}</h3>
       </div>
 
       <div className={"cardactions"}>
         <button
-          disabled={count < 1}
-          onClick={decrease}
-          className={"btn--previous"}
+          disabled={count === 0 ? true : false}
+          onClick={() => setCount(count - 1)}
+          className={"btn__previous"}
         >
-          Previous
+          Previous advice
         </button>
 
-        <button onClick={increase} className={"btn--next"}>
-          Next
+        <button
+          disabled={count >= data.length - 1}
+          onClick={() => setCount(count + 1)}
+          className={"btn__next"}
+        >
+          Next advice
         </button>
       </div>
     </div>
