@@ -1,22 +1,30 @@
 export let data = [
   {
     id: 1,
-    text: "Never run with scissors.",
+    text: "Stay true to yourself.",
   },
   {
     id: 2,
-    text: "Always the burrito.",
+    text: "Do what you love--not what you're told to love.",
   },
   {
     id: 3,
-    text: "Never buy cheap cling film.",
+    text: "Create the environment that's right for you.",
   },
   {
     id: 4,
-    text: "Don't feed Mogwais after midnight.",
+    text: "Choose your friends wisely.",
   },
   {
     id: 5,
-    text: "Play is the true mother of invention.",
+    text: "Develop positive habits.",
+  },
+  {
+    id: 6,
+    text: "Create certainty and leave room for uncertainty.",
+  },
+  {
+    id: 7,
+    text: " Most decisions are reversible.",
   },
 ];

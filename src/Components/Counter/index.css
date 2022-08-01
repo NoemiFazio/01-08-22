@@ -1,0 +1,15 @@
+.Counter {
+  border: 1px solid rgba(98, 0, 255, 0.79);
+  box-shadow: 0 0 20px rgba(98, 0, 255, 0.379);
+  border-radius: 20px;
+  padding: 40px;
+  width: 350px;
+}
+
+.Counter__cardTitle {
+  margin-top: 0px;
+}
+
+.Counter__text {
+  font-size: 15px;
+}

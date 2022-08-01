@@ -1,13 +1,15 @@
 import logo from "./logo.svg";
 import "./App.css";
-import CounterDue from "./CounterDue/CounterDue";
-import Counter from "./Counter/Counter";
+import CounterDue from "./Components/CounterDue/CounterDue";
+import Counter from "./Components/Counter/Counter";
 
 function App() {
   return (
     <div className="App">
-      <Counter />
-      <CounterDue />
+      <div className="mainContent">
+        <Counter />
+        <CounterDue />
+      </div>
     </div>
   );
 }

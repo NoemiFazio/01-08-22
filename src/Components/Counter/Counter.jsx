@@ -1,6 +1,7 @@
 import "./index.css";
 import { useState } from "react";
-import { data } from "../Assets/data";
+import { data } from "../../Assets/data";
+import Button from "../Button/Button";
 
 const Counter = () => {
   const [count, setCount] = useState(0);
@@ -11,26 +12,25 @@ const Counter = () => {
   return (
     <div className="Counter">
       <div className={"Counter__card"}>
-        <h1>USESTATE COUNTER</h1>
-        <h2 className={"card__id"}>({consiglio.id})</h2>
+        <h1 className="Counter__cardTitle">UseState Counter</h1>
+        <h2 className={"Counter__cardId"}>»{consiglio.id}«</h2>
+        <h3 className="Counter__text">{consiglio.text}</h3>
       </div>
 
       <div className={"btn__div"}>
-        <button
+        <Button
+          btnTextContent={"Previous advice"}
           disabled={count === 0 ? true : false}
           onClick={previous}
           className={"btn__previous"}
-        >
-          Previous advice
-        </button>
+        />
 
-        <button
+        <Button
+          btnTextContent={"Next advice"}
           disabled={count >= data.length - 1}
           onClick={next}
           className={"btn__next"}
-        >
-          Next advice
-        </button>
+        />
       </div>
     </div>
   );
