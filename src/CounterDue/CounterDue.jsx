@@ -17,34 +17,32 @@ function CounterDue() {
   }
 
   const [state, dispatch] = useReducer(reducer, initialState);
-  let advice = data[state.count];
+  //il valore iniziale è dato da data e dal count, definito in riga 6
+  let consiglio = data[state.count];
 
   return (
-    <div className={"container"}>
-      {/* card container */}
-      <div className={"card-container"}>
-        <div className={"card"}>
-          <h2>{}</h2>
-          <p className={"card__text"}>Post number: #{}</p>
-        </div>
+    <div className="CounterDue">
+      <div className={"CounterDue__card"}>
+        <h1>USEREDUCER COUNTER</h1>
+        <h2 className={"card__id"}>({consiglio.id})</h2>
+        <h3>{consiglio.text}</h3>
       </div>
-      {/* Card Actions */}
-      <div className={"card__actions"}>
-        {/* Btn decrease */}
+
+      <div className={"btn__div"}>
         <button
-          disabled
-          className={"btn--previous"}
-          //onClick={/* FUNCTION} *}
+          disabled={state.count < 1}
+          className={"btn__previous"}
+          onClick={() => dispatch({ type: "previous" })}
         >
-          Previous
+          Previous advice
         </button>
         {/* Btn increase */}
         <button
-          disabled
-          className={"btn--next"}
-          //onClick={/* FUNCTION */}
+          disabled={state.count >= 4}
+          className={"btn__next"}
+          onClick={() => dispatch({ type: "next" })}
         >
-          Next
+          Next advice
         </button>
       </div>
     </div>

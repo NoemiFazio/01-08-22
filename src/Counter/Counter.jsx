@@ -5,19 +5,20 @@ import { data } from "../Assets/data";
 const Counter = () => {
   const [count, setCount] = useState(0);
   let consiglio = data[count];
+  const next = () => setCount(count + 1);
+  const previous = () => setCount(count - 1);
 
   return (
     <div className="Counter">
-      <div className={"card"}>
+      <div className={"Counter__card"}>
         <h1>USESTATE COUNTER</h1>
-        <h2 className={"card__text"}>({consiglio.id})</h2>
-        <h3>{consiglio.text}</h3>
+        <h2 className={"card__id"}>({consiglio.id})</h2>
       </div>
 
-      <div className={"cardactions"}>
+      <div className={"btn__div"}>
         <button
           disabled={count === 0 ? true : false}
-          onClick={() => setCount(count - 1)}
+          onClick={previous}
           className={"btn__previous"}
         >
           Previous advice
@@ -25,7 +26,7 @@ const Counter = () => {
 
         <button
           disabled={count >= data.length - 1}
-          onClick={() => setCount(count + 1)}
+          onClick={next}
           className={"btn__next"}
         >
           Next advice
