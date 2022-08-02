@@ -20,7 +20,7 @@ const Counter = () => {
       <div className={"btn__div"}>
         <Button
           btnTextContent={"Previous advice"}
-          disabled={count === 0 ? true : false}
+          disabled={count === 0}
           onClick={previous}
           className={"btn__previous"}
         />

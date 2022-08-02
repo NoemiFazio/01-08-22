@@ -6,6 +6,10 @@ import Button from "../Button/Button";
 function CounterDue() {
   const initialState = { count: 0 };
 
+  const [state, dispatch] = useReducer(reducer, initialState);
+  //il valore iniziale è dato da data e dal count, definito in riga 7
+  let consiglio = data[state.count];
+
   function reducer(state, action) {
     switch (action.type) {
       case "next":
@@ -16,10 +20,6 @@ function CounterDue() {
         throw new Error();
     }
   }
-
-  const [state, dispatch] = useReducer(reducer, initialState);
-  //il valore iniziale è dato da data e dal count, definito in riga 6
-  let consiglio = data[state.count];
 
   return (
     <div className="CounterDue">
